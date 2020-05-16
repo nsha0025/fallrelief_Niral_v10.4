@@ -1,0 +1,163 @@
+﻿@model RiskAssessment.Models.SessionModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fall Relief</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="~/Content/open-iconic-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.min.css" rel="stylesheet" />
+
+    <link href="~/Content/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/aos.css" rel="stylesheet" />
+
+    <link href="~/Content/ionicons.min.css" rel="stylesheet" />
+
+    <link href="~/Content/flaticon.css" rel="stylesheet" />
+
+    <link href="~/Content/icomoon.css" rel="stylesheet" />
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <style>
+        p {
+            line-height: 200%;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+
+        <div class="container">
+            <div class="ftco-animate">
+                <a href="/Home/Index">
+                    <img src="~/Content/Fall_Relief_edited_new.png" style="width:20%; height:20%; left:50em" />
+                </a>
+
+                <div id='cssmenu'>
+                    <ul>
+                        <li class="active"><a href="/Home/Index" class="nav-link">Home</a></li>
+                        <li><a href="/Home/Assessment" class="nav-link">Assessment</a></li>
+                        <li><a href="/Home/Tips" class="nav-link">Health Tips</a></li>
+                        <li><a href="/Home/EmergencyHelplines" class="nav-link">Emergency Helplines</a></li>
+                        <li><a href="/Home/About" class="nav-link">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>@ViewBag.AssessmentType</h2>
+                <p>
+                    Most of us will have experienced falls at some point.
+                    Indeed, there is no denying that the chance<br />
+                    of falling does increase as we age.
+                </p>
+                <p>
+                    However, we should not take falls as a normal part of getting
+                    older into granted.
+                    Falls are caused by a series of risk factors that can affect a person of any age.
+                    The causes are summarized as being personal risk factors or environmental risk factors.
+                    Personal risk factors are factors that affect you and your body while <br />environmental risk factors
+                    relate to the world around
+                    you.
+                </p>
+                <p>
+                    Here is the point. By conducting a multi-faceted assessment,<br /> the fall rate can be reduced by 30-
+                    40%, followed by multi-factorial interventions.<br />
+                <p>
+                    Therefore, our “Fall Relief” assessment can help you obtain a more detailed analysis of the falling
+                    for the people you care about so much.
+                </p>
+
+                <p style="font-size:20px">Click below to begin the assessment</p>
+            </div>
+        </div>
+
+        @if (Model != null)
+        {
+            using (Html.BeginForm("RiskAssessment", "Home", FormMethod.Post, new { @id = "assessmentRegister" }))
+            {
+                @Html.HiddenFor(x => Model.AssessmentTypeID)
+
+                <a href="javascript:viod(0);" onclick="getElementById('assessmentRegister').submit();" class="btn btn-primary">Start Assessment</a>
+            }
+        }
+
+
+    </div>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.stellar.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/aos.js"></script>
+
+    <script src="~/Scripts/jquery.animateNumber.min.js"></script>
+    <script src="~/Scripts/scrollax.min.js"></script>
+    <script src="~/Scripts/google-map.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
+
+
+
+    <div class="scrollelement">
+        <img src="~/Content/scrolltotop_128.png" id="scrollTop"
+             title="Click to scroll to top at once" style="height: 70%; width: 50%" />
+    </div>
+
+    <script>
+
+        var scrollTop = document.getElementById("scrollTop");
+
+        window.onscroll = function () {
+            scrollfunction()
+        }
+
+            ;
+        function scrollfunction() {
+            if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+                scrollTop.style.display = "block";
+            }
+
+            else {
+                scrollTop.style.display = "none";
+            }
+
+        }
+
+        scrollTop.addEventListener("click", function () {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth"
+            })
+        })
+
+    </script>
+
+
+
+</body>
+</html>

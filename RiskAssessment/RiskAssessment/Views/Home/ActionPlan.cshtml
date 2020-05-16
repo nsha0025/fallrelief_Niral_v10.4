@@ -1,0 +1,460 @@
+﻿@model  RiskAssessment.Models.ActionPlanModel
+<html>
+<head>
+
+    <title>Fall Relief</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="~/Content/open-iconic-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.min.css" rel="stylesheet" />
+
+    <link href="~/Content/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Content/aos.css" rel="stylesheet" />
+
+    <link href="~/Content/ionicons.min.css" rel="stylesheet" />
+
+    <link href="~/Content/flaticon.css" rel="stylesheet" />
+
+    <link href="~/Content/icomoon.css" rel="stylesheet" />
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <link href="~/Content/homeaction.css" rel="stylesheet" />
+
+    <style>
+        .button {
+            background-color: #afa939;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 26px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+      
+
+        .collapsible {
+            background-color: #afa939;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            width: 90%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            margin: 10px 10px 15px 2px;
+        }
+
+            .active, .collapsible:hover {
+                background-color: #c2bc53;
+            }
+            .collapsible:after {
+                content: '\002B';
+                color: white;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            width: 100%;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 15px;
+                height: 50px;
+                vertical-align: bottom;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #afa939;
+                color: white;
+            }
+
+        .card-img-top {
+            width: 100%;
+            
+            object-fit: cover;
+        }
+
+
+        .title {
+            background-color: white;
+            padding: 30px 40px 30px 20px;
+            background: rgba(256, 256, 256, 0.5);
+            display: inline-block;
+            font-family: Orbitron;
+        }
+
+
+        .container-fluid {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <div class="container">
+            <div class="ftco-animate">
+                <a href="/Home/Index">
+                    <img src="~/Content/Fall_Relief_edited_new.png" style="width:20%; height:20%; left:50em" />
+                </a>
+
+                <div id='cssmenu'>
+                    <ul>
+                        <li><a href="/Home/Index" class="nav-link">Home</a></li>
+                        <li><a href="/Home/Assessment" class="nav-link">Assessment</a></li>
+                        <li><a href="/Home/Tips" class="nav-link">Health Tips</a></li>
+                        <li><a href="/Home/EmergencyHelplines" class="nav-link">Emergency Helplines</a></li>
+                        <li><a href="/Home/About" class="nav-link">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+
+    <div class="container col-md-12">
+        <div class="col-md-12 row" style="background-color:#F5F5F5;padding-left:30px;margin-top:20px">
+            <div class="col-md-7" style="margin-top:20px;margin-bottom:20px">
+                <div>
+                    <h1 style="color:#afa939;font-size:30px">Action Plan</h1>
+                    <p style="color:black;font-size:20px">
+                        Your answers suggest that you have a low risk level to falls.
+                        You may benefit from us and we will support you to continue maintaing a healthy lifetsyle at home.
+                        We will help you by giving you a targeted lifstyle plan.
+                        Click the generate plan option to get a diet and exercise plan based on your answers.
+                        Scroll down to find helpful advice based upon your answers.
+                    </p>
+                </div>
+            </div>
+
+
+
+            @if (Model.AssessmentTypeID == 1)
+            {
+                <div class="col-md-5">
+                    <section class="plan">
+                        <a href="/Home/Assessment" class="button">Home Safety Assessment</a>
+                        <a href="/Home/Tips" class="button">Get tips</a>
+                    </section>
+                </div>
+            }
+            else
+            {
+                <div class="col-md-5">
+                    <section class="plan">
+                        <a href="/Home/Assessment" class="button">Health Assessment</a>
+                        <a href="/Home/Tips" class="button">Get tips</a>
+                    </section>
+                </div>
+            }
+
+
+
+
+
+            <!--<a href="/Home/AssessmentResult" class="btn btn-primary" style="padding:4px 30px 4px 30px;margin: 10px 5px">Previous</a>-->
+
+        </div>
+
+
+        @if (Model.AssessmentTypeID == 1)
+        {
+
+            @* list out the risks *@
+
+            <div class="col-md-12" style="margin-top:20px;padding-left:30px">
+                <h2 class="subheading" style="font-size:25px;color:#afa939">Diet Plan</h2>
+
+                <p style="color:black;font-size:20px">
+                    Here are some food options you should think to incorporate into your daily diet to help you improve your overall health.
+
+                    The food options below are have been designed to target towards the areas which we have identified to be a risk in increase the likelihood of you falling in the future based off the assessment result.
+                </p>
+
+
+
+
+                @for (int i = 0; i < Model.Dlist.Count; i++)
+                {
+
+                    <button class="collapsible">
+                        @Html.Raw(Model.Dlist[i].Risk)
+                    </button>
+
+                    <div class="content">
+
+                        <h2>Here are some nutritious food items that can help you prevent falls</h2>
+                        @for (int x = 0; x < Model.Dlist[i].Nlist.Count; x++)
+                        {
+
+                            <h1>@Html.Raw(Model.Dlist[i].Nlist[x].Nutrient)</h1>
+
+                            <p>@Html.Raw(Model.Dlist[i].Nlist[x].Description)</p>
+
+                            <p>Some of the food sources which contain high @Html.Raw(Model.Dlist[i].Nlist[x].Nutrient) are listed below</p>
+
+                            for (int z = 0; z < Model.Dlist[i].Nlist[x].Flist.Count; z++)
+                            {
+                                <div class="col-md-4">
+                                    <div class="card-deck">
+                                        <div class="card">
+
+
+                                            <div class="card-body">
+
+                                                <h4 class="card-title">@Html.Raw(Model.Dlist[i].Nlist[x].Flist[z].FoodGroupName)</h4>
+
+                                                <p class="card-text">>@Html.Raw(Model.Dlist[i].Nlist[x].Flist[z].Description)</p>
+
+                                            </div>
+                                            <div class="card">
+                                                <img class="card-img-top" src="@Html.Raw(Model.Dlist[i].Nlist[x].Flist[z].ImgDir)" alt="Card image" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            }
+
+                        }
+                    </div>
+
+                }
+
+
+
+
+
+                <h2 class="subheading" style="font-size:25px">Exercise Plan</h2>
+                <p style="font-size:20px;color:black">
+                    Here are some exercises you should think to incorporate into your daily life to help you improve your overall health.
+                    The exercises below are have been designed to target towards the areas which we have identified to be a risk in increase the likelihood of you falling in the future based off the assessment result.
+                </p>
+
+
+
+
+                @for (int i = 0; i < Model.Dlist.Count; i++)
+                {
+
+                    <button class="collapsible">
+                        @Html.Raw(Model.Dlist[i].Risk)
+                    </button>
+                    <div class="content">
+                        <p>Below are your targeted exercises with their description to reduce @Html.Raw(Model.Dlist[i].Risk)</p>
+                        @for (int x = 0; x < Model.Dlist[i].Elist.Count; x++)
+                        {
+                            <h1>@Html.Raw(Model.Dlist[i].Elist[x].Excerise)</h1>
+                            <div class="row">
+                                <div class="col-md-4">
+
+                                    <img src="@Html.Raw(Model.Dlist[i].Elist[x].ImgDir)" style="width:40%;float:left" />
+                                </div>
+
+                                @for (int z = 0; z < Model.Dlist[i].Elist[x].Slist.Count; z++)
+                                {
+                                    <div class="col-md-8" style="text-align:left">
+                                        <h2>Step:@Html.Raw(Model.Dlist[i].Elist[x].Slist[z].StepNo)</h2>
+
+                                        <p>@Html.Raw(Model.Dlist[i].Elist[x].Slist[z].Description)"</p>
+                                    </div>
+
+                                }
+
+                            </div>
+
+                        }
+
+                    </div>
+                }
+
+            </div>
+
+        }
+
+
+
+        else
+        {
+
+            <table id="customers">
+
+
+
+                <tr>
+
+                    <th> Risk </th>
+
+                    <th> Action Required</th>
+
+                    <th> Location</th>
+
+                    <th> Who</th>
+
+                    <th> Status</th>
+
+                </tr>
+
+
+
+                @for (int i = 0; i < Model.HSList.Count; i++)
+                {
+                    <tr>
+
+                        <td> @Html.Raw(Model.HSList[i].Risk) </td>
+
+                        <td> @Html.Raw(Model.HSList[i].ActionRequired) </td>
+
+                        <td> @Html.Raw(Model.HSList[i].Location) </td>
+
+                        <td> @Html.Raw(Model.HSList[i].Who) </td>
+
+                        <td> @Html.Raw(Model.HSList[i].Status) </td>
+
+
+                    </tr>
+                }
+            </table>
+
+        }
+    </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                }
+                else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.stellar.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/aos.js"></script>
+
+    <script src="~/Scripts/jquery.animateNumber.min.js"></script>
+    <script src="~/Scripts/scrollax.min.js"></script>
+    <script src="~/Scripts/google-map.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
+
+
+
+    <div class="scrollelement">
+        <img src="~/Content/scrolltotop_128.png" id="scrollTop"
+             title="Click to scroll to top at once" style="height: 70%; width: 50%" />
+    </div>
+
+    <script>
+
+        var scrollTop = document.getElementById("scrollTop");
+
+        window.onscroll = function () {
+            scrollfunction()
+        }
+
+            ;
+        function scrollfunction() {
+            if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+                scrollTop.style.display = "block";
+            }
+
+            else {
+                scrollTop.style.display = "none";
+            }
+
+        }
+
+        scrollTop.addEventListener("click", function () {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth"
+            })
+        })
+
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
